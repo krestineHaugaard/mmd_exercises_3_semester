@@ -1,27 +1,27 @@
 "use strict";
 
-// let letters = [`a`, `b`, `c`, `d`, `e`, `f`, `g`, `h`];
+// const letters = [`a`, `b`, `c`, `d`, `e`, `f`, `g`, `h`];
 
 // console.log(letters[4]);
 
-// let newarr = letters;
+// const newarr = letters;
 // newarr[4] = `*`;
 
 // console.log(letters[4]);
 
-// Resultat: fik den første console.log til e og den anden til * ved ikke om det er korrekt
+// Resultat: fik den første console.log til e og den anden til *
 
-// Hvad er forskellen mellem letters og newarr?
+// Hvad er forskellen mellem letters og newarr? - det en kopi, så der er ikke nogen forskel
 
-// Hvordan ser hele letters array ud før og efter ændringen til newarr?
+// Hvordan ser hele letters array ud før og efter ændringen til newarr? - før var det bogstaver, men så bliver det lavet om til *
 
-// Er det muligt at ændre et array uden at ændre andre?
+// Er det muligt at ændre et array uden at ændre andre? -åbentbart ikke, lav et nyt array i stedet
 
-// Hvorfor ikke?
+// Hvorfor ikke? - fordi selmom det er en kopi, så går ændringerne ind og ændre originalen
 
-// Hvad sker der hvis du bruger const i stedet for let?
+// Hvad sker der hvis du bruger const i stedet for let? - der sker det samme, ingen forskell om det er const eller let
 
-// Har du nogen ide om hvorfor det er sådan?
+// Har du nogen ide om hvorfor det er sådan? - no clue, måske så man kan holde styr på sit array, i stedet for at lave alle mulige kopier man skal holde styr på i forhold til hvad de indeholder
 
 // Ny opgave
 
@@ -157,12 +157,20 @@
 
 // Hvad gør hver metode?
 
-// Push = skubber et ny object og til ens array
+// Push = skubber et ny object bagerst til ens array
 
-// Pop =
+// Pop = fjerner det sidste element i ens array
 
-// Slice =
+// Slice = The slice() method returns selected elements in an array, as a new array. The slice() method selects from a given start, up to a (not inclusive) given end. The slice() method does not change the original array.
 
-// Splice =
+// Splice = The splice() method adds and/or removes array elements. The splice() method overwrites the original array.
 
-// IndexOf =
+// IndexOf = The indexOf() method returns the first index (position) of a specified value.
+
+// The indexOf() method returns -1 if the value is not found.
+
+// The indexOf() method starts at a specified index and searches from left to right (from the given start postion to the end of the array).
+
+// By default the search starts at the first element and ends at the last.
+
+// Negative start values counts from the last element (but still searches from left to right).

@@ -1,0 +1,15 @@
+body {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  align-items: center;
+  margin: 100px;
+}
+
+ul {
+  display: flex;
+}
+
+li {
+  list-style: none;
+}

@@ -30,6 +30,7 @@ const vehicles = [
 
 const ulPointer = document.querySelector("ul");
 
+// knapper
 const btnElctric = document.querySelector("#show_elctric");
 const btnMoreThanTwo = document.querySelector("#show_more_than_two_passengers");
 const btnElctricOwned = document.querySelector("#show_electic_owned_by_jonas");
@@ -40,62 +41,75 @@ const btnShowAll = document.querySelector("#show_all");
 
 showTheseVehicles(vehicles);
 
+btnElctric.addEventListener("click", showElectric);
+btnMoreThanTwo.addEventListener("click", showMoreSeats);
+btnElctricOwned.addEventListener("click", showElecricAndOwner);
+btnRugbroedMoreThanOne.addEventListener("click", showGasAndPassengers);
+btnShowAll.addEventListener("click", showAll);
+
 function showTheseVehicles(arr) {
   arr.forEach((each) => {
     ulPointer.innerHTML += `<li>${each.type}</li>`;
-    ulPointer.innerHTML += `<li>${each.fuel}</li>`;
+    ulPointer.innerHTML += `<li>${each.fuel || "Not known"}</li>`;
     ulPointer.innerHTML += `<li>${each.passengers}</li>`;
-    ulPointer.innerHTML += `<li>${each.stops}</li>`;
-    ulPointer.innerHTML += `<li>${each.ownedBy}</li>`;
-    ulPointer.innerHTML += `<li>${each.isElectric}</li>`;
-    ulPointer.innerHTML += `<li>${each.isTandem}</li>`;
+    ulPointer.innerHTML += `<li>${each.stops || "No"}</li>`;
+    ulPointer.innerHTML += `<li>${each.ownedBy || "No one"}</li>`;
+    ulPointer.innerHTML += `<li>${each.isElectric ? "Yes" : "No"}</li>`;
+    ulPointer.innerHTML += `<li>${each.isTandem ? "Yes" : "No"}</li>`;
   });
 }
 
-// hardcode hvis køretøj skal være electrisk
+//  hvis køretøj skal være electrisk
 
-function isElectric(electric) {
-  if (electric.isElectric === true) {
-    vehicles.filter(showTheseVehicles);
-  } else {
-    return false;
-  }
+function showElectric() {
+  const electricVehicles = vehicles.filter((vehicle) => vehicle.isElectric);
+  clearList();
+  showTheseVehicles(electricVehicles);
 }
 
-// console.log(vehicles.filter(isElectric));
+//  hvis kørertøjer med mere end 2 sæder
 
-// hardcode hvis kørertøjer med mere end 2 sæder
-
-function moreSeats(seat) {
-  if (seat.passengers > 2) {
-    return true;
-  } else {
-    return false;
-  }
+function showMoreSeats() {
+  const twoSeats = vehicles.filter((vehicle) => vehicle.passengers > 2);
+  clearList();
+  showTheseVehicles(twoSeats);
 }
 
-// console.log(vehicles.filter(moreSeats));
+// alle el-køreretøjer som ejes af jonas
 
-// hardcode alle el-køreretøjer som ejes af jonas
-
-function seatsAndOwner(seatAndOwner) {
-  if (seatAndOwner.isElectric === true && seatAndOwner.ownedBy === "Jonas") {
-    return true;
-  } else {
-    return false;
-  }
+function showElecricAndOwner() {
+  const electricAndOwner = vehicles.filter(
+    (vehicle) => vehicle.isElectric && vehicle.ownedBy === "Jonas"
+  );
+  clearList();
+  showTheseVehicles(electricAndOwner);
 }
 
-// console.log(vehicles.filter(seatsAndOwner));
+// alle køretøjer der kører på rugbrød og har plads til mere end en
 
-// hardcode alle køretøjer der kører på rugbrød og har plads til mere end en
-
-function gasAndPassengers(gAP) {
-  if (gAP.fuel === "Rugbrød" && gAP.passengers > 1) {
-    return true;
-  } else {
-    return false;
-  }
+function showGasAndPassengers() {
+  const gAP = vehicles.filter(
+    (vehicle) => vehicle.fuel === "Rugbrød" && vehicle.passengers > 1
+  );
+  clearList();
+  showTheseVehicles(gAP);
 }
 
-// console.log(vehicles.filter(gasAndPassengers));
+// vis alle
+
+function showAll() {
+  clearList();
+  showTheseVehicles(vehicles);
+}
+
+// fjerne list indhold så det ikke bygger sig oven på hinanden
+function clearList() {
+  ulPointer.innerHTML = "";
+  ulPointer.innerHTML += `<li><strong>Type</strong></li>`;
+  ulPointer.innerHTML += `<li><strong>Fuel</strong></li>`;
+  ulPointer.innerHTML += `<li><strong>Passengers</strong></li>`;
+  ulPointer.innerHTML += `<li><strong>Stops</strong></li>`;
+  ulPointer.innerHTML += `<li><strong>OwnedBy</strong></li>`;
+  ulPointer.innerHTML += `<li><strong>Electric</strong></li>`;
+  ulPointer.innerHTML += `<li><strong>Tandem</strong></li>`;
+}

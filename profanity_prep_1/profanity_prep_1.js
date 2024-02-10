@@ -3,8 +3,16 @@ let theText =
 
 // Find ordet "ord" i strengen theText og erstat den med ting
 
-// Prøv med split / join.
+// console.log(theText.replace(`ord`, `ting`));
 
-// Prøv med replaceAll()
+// Split / join.
 
-// console.log dit resultat
+// const newText = theText.split(` `);
+
+// console.log(newText);
+
+// console.log(newText.join(` `));
+
+// ReplaceAll()
+
+// console.log(theText.replaceAll(`ord`, `ting`));

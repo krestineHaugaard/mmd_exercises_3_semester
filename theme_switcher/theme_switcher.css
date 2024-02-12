@@ -1,0 +1,55 @@
+[data-theme="dark"] {
+  --body-col: rgb(148, 148, 148);
+  --header-col: rgb(43, 43, 43);
+  --main-col: rgb(90, 90, 90);
+  --footer-col: rgb(15, 15, 15);
+  --p-col: rgb(203, 203, 203);
+  --h1-col: rgb(222, 222, 222);
+}
+
+[data-theme="light"] {
+  --body-col: rgb(159, 159, 159);
+  --header-col: rgb(187, 187, 187);
+  --main-col: rgb(228, 228, 228);
+  --footer-col: rgb(172, 172, 172);
+  --p-col: rgb(14, 14, 14);
+  --h1-col: rgb(29, 29, 29);
+}
+
+[data-theme="funky"] {
+  --body-col: rgb(19, 186, 0);
+  --header-col: rgb(255, 63, 172);
+  --main-col: rgb(68, 255, 249);
+  --footer-col: rgb(255, 50, 50);
+  --p-col: rgb(255, 204, 0);
+  --h1-col: rgb(166, 88, 255);
+}
+
+body {
+  background-color: var(--body-col);
+}
+
+header {
+  background-color: var(--header-col);
+  color: var(--p-col);
+  width: 1400px;
+  margin: auto;
+}
+
+main {
+  background-color: var(--main-col);
+  color: var(--p-col);
+  width: 1400px;
+  margin: auto;
+}
+
+footer {
+  background-color: var(--footer-col);
+  color: var(--p-col);
+  width: 1400px;
+  margin: auto;
+}
+
+h1 {
+  color: var(--h1-col);
+}

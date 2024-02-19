@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="to_do_list.css" />
+    <script type="module" src="to_do_list.js"></script>
+    <title>To do list</title>
+  </head>
+  <body data-theme="dark">
+    <div id="big_grid">
+      <!-- nav baren der ligger til venstre i big grid som inderholder to knapper og en tema switch drop down -->
+      <section id="nav_bar">
+        <button id="todo_list">Din to do liste</button>
+        <button id="finished_todo">Færdige opgaver</button>
+        <label>
+          Tema:
+          <select class="tema" name="tema">
+            <option value="dark">Mørk</option>
+            <option value="light">Lys</option>
+            <option value="red">Rød</option>
+            <option value="yellow">Gul</option>
+            <option value="green">Grøn</option>
+            <option value="blue">Blå</option>
+            <option value="purple">Lilla</option>
+          </select>
+        </label>
+      </section>
+      <!-- Opgave baren der ligger til højre i big grid, indeholder en ny opgave knap samt de articler(opgaver) som brugeren generere  -->
+      <section id="todo_list_bar">
+        <button id="new_task_button">Ny opgave +</button>
+        <section id="todo_list_item"></section>
+      </section>
+    </div>
+
+    <template id="new_task">
+      <article id="">
+        <div id="top_of_element">
+          <h1 aria-label="headline to fill" data-type="task_name"></h1>
+          <div>
+            <input
+              aria-label="Tjek opgave af"
+              type="checkbox"
+              name="check_item"
+              value=""
+            />
+            <img
+              id="trash_icon"
+              src="icons/trash_can_icon.svg"
+              alt="trash icon for deleting"
+            />
+          </div>
+        </div>
+        <div id="text_of_element">
+          <p data-type="discription"></p>
+        </div>
+      </article>
+    </template>
+
+    <!-- pop up vindue der ligger uden for big grid og skal komme frem som overlay når man vil oprette en ny opgave til sin liste -->
+    <div id="pop_up" class="hide">
+      <div id="cross_for_close">
+        <span id="cross_line1"></span>
+        <span id="cross_line2"></span>
+      </div>
+      <form>
+        <label for="assignment_name">Opgavens title*</label>
+        <input type="text" id="assignment_name" name="assignment_name" />
+        <label for="assignment_description">Opgavens beskrivelse</label>
+        <input
+          type="text"
+          id="assignment_description"
+          name="assignment_description"
+        />
+        <button type="button" id="submit_new_task">
+          Tilføj til to do liste
+        </button>
+      </form>
+    </div>
+  </body>
+</html>

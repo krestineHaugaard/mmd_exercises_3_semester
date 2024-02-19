@@ -13,18 +13,20 @@
       <section id="nav_bar">
         <button id="todo_list">Din to do liste</button>
         <button id="finished_todo">Færdige opgaver</button>
-        <label>
-          Tema:
-          <select class="tema" name="tema">
-            <option value="dark">Mørk</option>
-            <option value="light">Lys</option>
-            <option value="red">Rød</option>
-            <option value="yellow">Gul</option>
-            <option value="green">Grøn</option>
-            <option value="blue">Blå</option>
-            <option value="purple">Lilla</option>
-          </select>
-        </label>
+        <div id="indryk">
+          <label>
+            Tema:
+            <select class="tema" name="tema">
+              <option value="dark">Mørk</option>
+              <option value="light">Lys</option>
+              <option value="red">Rød</option>
+              <option value="yellow">Gul</option>
+              <option value="green">Grøn</option>
+              <option value="blue">Blå</option>
+              <option value="purple">Lilla</option>
+            </select>
+          </label>
+        </div>
       </section>
       <!-- Opgave baren der ligger til højre i big grid, indeholder en ny opgave knap samt de articler(opgaver) som brugeren generere  -->
       <section id="todo_list_bar">
@@ -35,36 +37,38 @@
 
     <template id="new_task">
       <article id="">
-        <div id="top_of_element">
+        <div class="top_of_element">
           <h1 aria-label="headline to fill" data-type="task_name"></h1>
           <div>
-            <input
-              aria-label="Tjek opgave af"
-              type="checkbox"
-              name="check_item"
-              value=""
-            />
+            <label for="check_item">
+              <input
+                aria-label="Tjek opgave af"
+                id=""
+                type="checkbox"
+                name="check_item"
+              />
+            </label>
             <img
-              id="trash_icon"
+              class="trash_icon"
               src="icons/trash_can_icon.svg"
               alt="trash icon for deleting"
             />
           </div>
         </div>
-        <div id="text_of_element">
+        <div class="text_of_element">
           <p data-type="discription"></p>
         </div>
       </article>
     </template>
 
     <!-- pop up vindue der ligger uden for big grid og skal komme frem som overlay når man vil oprette en ny opgave til sin liste -->
-    <div id="pop_up" class="hide">
+    <div id="pop_up">
       <div id="cross_for_close">
         <span id="cross_line1"></span>
         <span id="cross_line2"></span>
       </div>
-      <form>
-        <label for="assignment_name">Opgavens title*</label>
+      <form id="form_flex">
+        <label for="assignment_name">Opgavens title</label>
         <input type="text" id="assignment_name" name="assignment_name" />
         <label for="assignment_description">Opgavens beskrivelse</label>
         <input

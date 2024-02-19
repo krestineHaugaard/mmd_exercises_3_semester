@@ -4,7 +4,6 @@ const temaSwitch = document.querySelector(".tema");
 
 temaSwitch.addEventListener("change", (event) => {
   let nyValue = event.target.value;
-  console.log(nyValue);
   document.querySelector("body").dataset.theme = nyValue;
 });
 
@@ -31,6 +30,7 @@ finishedTodoBtn.addEventListener("click", () => {
 const popUpElement = document.querySelector("#pop_up");
 
 newTaskBtn.addEventListener("click", () => {
+  document.querySelector("input").textContent = "";
   popUpElement.classList.remove("hide");
 });
 
@@ -61,7 +61,9 @@ function createNewDomElement(taskName, taskDescription) {
   const templateClone = document
     .querySelector("#new_task")
     .content.cloneNode(true);
-  templateClone.querySelector("article").id = unikIDForArticle();
+  let newID = unikIDForArticle();
+  templateClone.querySelector("article").id = newID;
+  templateClone.querySelector("input").id = newID;
   templateClone.querySelector("[data-type=task_name").textContent = taskName;
   templateClone.querySelector("[data-type=discription").textContent =
     taskDescription;

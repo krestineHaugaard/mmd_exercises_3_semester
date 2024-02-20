@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+}
+
+html,
+body,
+.grid_1,
+.grid_left,
+.grid_right {
+  height: 100%;
+}
+
+.grid_1 {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+.pop_up {
+  display: flex;
+  flex-direction: column;
+}
+
+.template_flex {
+  display: flex;
+}
+
+input[type="number"] {
+  width: 40px;
+}
+
+/* elementer der skal gemmes væk*/
+
+.hide {
+  display: none;
+}

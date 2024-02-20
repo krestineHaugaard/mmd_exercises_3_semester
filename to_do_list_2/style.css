@@ -1,3 +1,7 @@
+* {
+  font-family: var(--font-family);
+}
+
 :root {
   --font-big: 40px;
   --font-medium: 25px;
@@ -17,7 +21,7 @@
   --darkest-col: rgb(83, 102, 125);
   --btn-col: rgb(107, 184, 105);
   --background-col: rgb(231, 255, 232);
-  --light-grey: rgb(255, 254, 247);
+  --light-grey: rgb(255, 255, 255);
   --lightest-col: rgb(255, 255, 255);
 }
 
@@ -25,7 +29,7 @@
   --darkest-col: rgb(52, 9, 9);
   --btn-col: rgb(162, 60, 60);
   --background-col: rgb(255, 158, 158);
-  --light-grey: rgb(217, 217, 217);
+  --light-grey: rgb(255, 255, 255);
   --lightest-col: rgb(255, 255, 255);
 }
 
@@ -33,7 +37,7 @@
   --darkest-col: rgb(39, 37, 24);
   --btn-col: rgb(190, 186, 91);
   --background-col: rgb(255, 242, 195);
-  --light-grey: rgb(217, 217, 217);
+  --light-grey: rgb(255, 255, 255);
   --lightest-col: rgb(255, 255, 255);
 }
 
@@ -41,7 +45,7 @@
   --darkest-col: rgb(22, 38, 20);
   --btn-col: rgb(53, 85, 48);
   --background-col: rgb(163, 191, 166);
-  --light-grey: rgb(217, 217, 217);
+  --light-grey: rgb(255, 255, 255);
   --lightest-col: rgb(255, 255, 255);
 }
 
@@ -49,7 +53,7 @@
   --darkest-col: rgb(0, 55, 67);
   --btn-col: rgb(0, 164, 187);
   --background-col: rgb(201, 229, 255);
-  --light-grey: rgb(217, 217, 217);
+  --light-grey: rgb(255, 255, 255);
   --lightest-col: rgb(255, 255, 255);
 }
 
@@ -57,6 +61,149 @@
   --darkest-col: rgb(38, 15, 48);
   --btn-col: rgb(110, 41, 165);
   --background-col: rgb(214, 182, 255);
-  --light-grey: rgb(217, 217, 217);
+  --light-grey: rgb(255, 255, 255);
   --lightest-col: rgb(255, 255, 255);
+}
+
+/* basic tags */
+
+h1 {
+  font-size: var(--font-big);
+  color: var(--darkest-col);
+}
+
+h2 {
+  font-size: var(--font-medium);
+  color: var(--darkest-col);
+}
+
+p {
+  font-size: var(--font-small);
+  color: var(--darkest-col);
+}
+
+label {
+  font-size: var(--font-medium);
+  color: var(--darkest-col);
+}
+
+.grid_left label {
+  color: var(--lightest-col);
+}
+
+input {
+  font-size: var(--font-small);
+  color: var(--darkest-col);
+  background-color: var(--background-col);
+}
+
+select {
+  font-size: var(--font-small);
+  color: var(--darkest-col);
+  background-color: var(--background-col);
+}
+
+/* grid style */
+
+.grid_left {
+  background-color: var(--darkest-col);
+}
+
+.grid_right {
+  background-color: var(--background-col);
+}
+
+/* pop up */
+
+.pop_up {
+  background-color: var(--lightest-col);
+}
+
+/* opgave list item style */
+
+article {
+  background-color: var(--light-grey);
+}
+
+/* knapper */
+
+.grid_left_btn {
+  font-size: var(--font-medium);
+  color: var(--lightest-col);
+  background-color: var(--btn-col);
+  border: none;
+}
+
+.grid_left_btn:hover {
+  color: var(--darkest-col);
+  background-color: var(--background-col);
+}
+
+.grid_right_btn {
+  font-size: var(--font-medium);
+  color: var(--lightest-col);
+  background-color: var(--btn-col);
+  border: none;
+}
+
+.grid_right_btn:hover {
+  color: var(--darkest-col);
+  background-color: var(--background-col);
+}
+
+/* exit icon */
+
+.exit {
+  align-self: end;
+  display: flex;
+  flex-direction: column;
+  height: 30px;
+  width: 30px;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.line1,
+.line2 {
+  height: 4px;
+  width: 35px;
+  background-color: var(--darkest-col);
+  border-radius: 10px;
+}
+
+.line1 {
+  transform: translateY(2px) rotate(45deg);
+}
+
+.line2 {
+  transform: translateY(-2px) rotate(-45deg);
+}
+
+/* check mark icon */
+
+.check_mark {
+  align-self: end;
+  display: flex;
+  flex-direction: column;
+  height: 30px;
+  width: 30px;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.line3,
+.line4 {
+  height: 4px;
+  background-color: var(--btn-col);
+  border-radius: 10px;
+}
+
+.line3 {
+  width: 20px;
+  transform: translateY(8px) translateX(-3px) rotate(55deg);
+}
+
+.line4 {
+  width: 30px;
+  transform: translateY(0px) translateX(5px) rotate(-55deg);
 }

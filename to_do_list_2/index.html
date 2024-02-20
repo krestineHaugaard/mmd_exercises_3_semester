@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="layout.css" />
+    <script type="module" src="js.js"></script>
+    <title>To do list</title>
+  </head>
+  <body data-theme="dark">
+    <section class="grid_1">
+      <div class="dark_background">
+        <!-- venstre side af grid -->
+        <section class="grid_left">
+          <button class="grid_left_btn">Din to do liste</button>
+          <button class="grid_left_btn">Dine færdige opgaver</button>
+          <label>
+            Tema:
+            <select class="tema" name="tema">
+              <option value="dark">Mørk</option>
+              <option value="light">Lys</option>
+              <option value="red">Rød</option>
+              <option value="yellow">Gul</option>
+              <option value="green">Grøn</option>
+              <option value="blue">Blå</option>
+              <option value="purple">Lilla</option>
+            </select>
+          </label>
+        </section>
+        <!-- højre side af grid -->
+        <section class="grid_right">
+          <button class="grid_right_btn">Ny opgave +</button>
+          <section class="new_task">
+            <!-- insæt hver ny task her -->
+          </section>
+        </section>
+      </div>
+    </section>
+    <!-- pop up vindue -->
+    <section class="pop_up">
+      <div class="exit_pop_up">
+        <span class="line1"></span>
+        <span class="line2"></span>
+      </div>
+      <form class="form_flex">
+        <label for="assignment_name">Opgavens title</label>
+        <input type="text" id="assignment_name" name="assignment_name" />
+        <label for="assignment_description">Opgavens beskrivelse</label>
+        <input
+          type="text"
+          id="assignment_description"
+          name="assignment_description"
+        />
+        <!-- underopgaver -->
+        <h2>Ønsker du at tilføje underopgaver</h2>
+        <div class="part_assignment_container">
+          <section>
+            <label for="part_assignment_name">Title</label>
+            <input
+              type="text"
+              id="part_assignment_name"
+              name="part_assignment_name"
+            />
+            <label for="part_assignment_number">Antal</label>
+            <input
+              type="number"
+              id="part_assignment_number"
+              name="part_assignment_number"
+            />
+          </section>
+        </div>
+        <!-- knap til at tilføje ny linje i form -->
+        <label for="add_new_part_assignment">Ny underopgave linje</label>
+        <button
+          type="button"
+          id="add_new_part_assignment"
+          class="grid_right_btn"
+        >
+          +
+        </button>
+        <!-- knap til at sende information videre -->
+        <button type="button" id="submit_new_task" class="grid_right_btn">
+          Tilføj til to do liste
+        </button>
+      </form>
+    </section>
+    <!-- underopgave template -->
+    <template class="part_assignment_templete">
+      <section>
+        <label for="part_assignment_name">Title</label>
+        <input
+          type="text"
+          id="part_assignment_name"
+          name="part_assignment_name"
+        />
+        <label for="part_assignment_number">Antal</label>
+        <input
+          type="number"
+          id="part_assignment_number"
+          name="part_assignment_number"
+        />
+      </section>
+    </template>
+  </body>
+</html>

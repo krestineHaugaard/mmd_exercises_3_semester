@@ -7,10 +7,9 @@ temaSwitch.addEventListener("change", (event) => {
   document.querySelector("body").dataset.theme = nyValue;
 });
 
-// Tilføj opgave knap skal tilføje alt information fra pop op input boxes, til en ny article (opgave)
-
 const addTaskBtn = document.querySelector(".grid_right_btn");
 
+// object som skabelon til information der skal i array
 const TaskInfo = {
   name: "undefined",
   number: 0,
@@ -18,6 +17,7 @@ const TaskInfo = {
   completed: false,
 };
 
+// array hvor alt ny information bliver sent ind
 const allTask = [];
 
 addTaskBtn.addEventListener("click", () => {
@@ -34,7 +34,7 @@ addTaskBtn.addEventListener("click", () => {
     newTask.id = taskID;
 
     allTask.push(newTask);
-    document.querySelector("form").reset();
+    document.querySelector(".pop_up").reset();
     displayTask();
   }
 });

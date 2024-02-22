@@ -37,12 +37,14 @@
         <!-- to do task section -->
         <section id="to_do_list">
           <h1>To do list:</h1>
-          <form class="pop_up">
-            <label for="text">Add new</label>
-            <input type="text" id="text" placeholder="Task or item..." />
-            <input type="number" id="number" placeholder="Quantity" />
+          <div class="wrap_around">
+            <form class="pop_up">
+              <label id="label_text" for="text">Add new</label>
+              <input type="text" id="text" placeholder="Task or item..." />
+              <input type="number" id="number" placeholder="Quantity" />
+            </form>
             <button class="grid_right_btn">Add task</button>
-          </form>
+          </div>
           <section id="task_list_do"></section>
         </section>
         <!-- done task section -->
@@ -53,6 +55,7 @@
         <!-- tamplate af det indhold som skal kopires -->
         <template id="template">
           <article id="">
+            <div class="more_flex">
             <form>
               <input
                 title="Do or un-do task"
@@ -62,6 +65,7 @@
             </form>
             <p data-type="name"></p>
             <p data-type="number"></p>
+            </div>
             <div title="Delete task" class="exit">
               <span class="line1"></span>
               <span class="line2"></span>

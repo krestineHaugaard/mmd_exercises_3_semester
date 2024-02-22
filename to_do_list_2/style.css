@@ -78,7 +78,7 @@ h2 {
 }
 
 p {
-  font-size: var(--font-small);
+  font-size: var(--font-medium);
   color: var(--darkest-col);
 }
 
@@ -107,6 +107,7 @@ select {
   font-size: var(--font-small);
   color: var(--darkest-col);
   background-color: var(--background-col);
+  border: none;
 }
 
 /* grid style */
@@ -125,10 +126,14 @@ select {
   background-color: var(--lightest-col);
 }
 
+.wrap_around {
+  background-color: var(--lightest-col);
+}
+
 /* opgave list item style */
 
 article {
-  background-color: var(--light-grey);
+  background-color: var(--lightest-col);
 }
 
 /* knapper */
@@ -189,4 +194,8 @@ article {
 
 input[type="checkbox"] {
   cursor: pointer;
+}
+
+article:hover {
+  opacity: 75%;
 }

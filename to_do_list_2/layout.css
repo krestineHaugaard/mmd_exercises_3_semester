@@ -21,21 +21,72 @@ body,
   grid-template-columns: 1fr 4fr;
 }
 
-.pop_up {
-  display: flex;
-  flex-direction: column;
+/* grid left side */
+
+.grid_left_btn {
+  text-align: start;
+  padding: 30px 10%;
 }
 
-.template_flex {
+.grid_left label {
+  padding-left: 10%;
+}
+
+.grid_left_content {
   display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 150px;
+}
+
+/* grid right side */
+
+.grid_right_content {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 120px;
+  padding: 50px;
+}
+
+.grid_right_btn {
+  padding: 10px 10px;
+  width: 15%;
+}
+
+input[type="text"] {
+  padding: 10px 10px;
 }
 
 input[type="number"] {
-  width: 40px;
+  padding: 10px 10px;
+  width: 13%;
+}
+
+.pop_up {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  gap: 1%;
+}
+
+/* template content layout */
+
+.template_flex {
+  display: flex;
 }
 
 /* elementer der skal gemmes væk*/
 
 .hide {
   display: none;
+}
+
+/* media qurrie */
+
+@media (max-width: 1000px) {
+  .grid_1 {
+    display: grid;
+    grid-template-columns: 1.5fr 3fr;
+  }
 }

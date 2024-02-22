@@ -95,6 +95,12 @@ input {
   font-size: var(--font-small);
   color: var(--darkest-col);
   background-color: var(--background-col);
+  border: none;
+}
+
+::placeholder {
+  color: var(--darkest-col);
+  opacity: 50%;
 }
 
 select {
@@ -140,7 +146,7 @@ article {
 }
 
 .grid_right_btn {
-  font-size: var(--font-medium);
+  font-size: var(--font-small);
   color: var(--lightest-col);
   background-color: var(--btn-col);
   border: none;
@@ -179,31 +185,8 @@ article {
   transform: translateY(-2px) rotate(-45deg);
 }
 
-/* check mark icon */
+/* check mark style */
 
-.check_mark {
-  align-self: end;
-  display: flex;
-  flex-direction: column;
-  height: 30px;
-  width: 30px;
-  justify-content: center;
+input[type="checkbox"] {
   cursor: pointer;
-}
-
-.line3,
-.line4 {
-  height: 4px;
-  background-color: var(--btn-col);
-  border-radius: 10px;
-}
-
-.line3 {
-  width: 20px;
-  transform: translateY(8px) translateX(-3px) rotate(55deg);
-}
-
-.line4 {
-  width: 30px;
-  transform: translateY(0px) translateX(5px) rotate(-55deg);
 }

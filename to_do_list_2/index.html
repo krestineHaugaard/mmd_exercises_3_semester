@@ -12,51 +12,62 @@
     <section class="grid_1">
       <!-- venstre side af grid -->
       <section class="grid_left">
-        <button id="to_do_list_btn" class="grid_left_btn">
-          Your to do list
-        </button>
-        <button id="finished_list_btn" class="grid_left_btn">
-          Finished tasks
-        </button>
-        <label>
-          Tema:
-          <select class="tema" name="tema">
-            <option value="dark">Dark</option>
-            <option value="light">Light</option>
-            <option value="red">Red</option>
-            <option value="yellow">Yellow</option>
-            <option value="green">Green</option>
-            <option value="blue">Blue</option>
-            <option value="purple">Purple</option>
-          </select>
-        </label>
+        <div class="grid_left_content">
+          <button id="to_do_list_btn" class="grid_left_btn">To do list</button>
+          <button id="finished_list_btn" class="grid_left_btn">
+            Finished tasks list
+          </button>
+          <label>
+            Switch theme:
+            <select class="tema" name="tema">
+              <option value="dark">Dark</option>
+              <option value="light">Light</option>
+              <option value="red">Red</option>
+              <option value="yellow">Yellow</option>
+              <option value="green">Green</option>
+              <option value="blue">Blue</option>
+              <option value="purple">Purple</option>
+            </select>
+          </label>
+        </div>
       </section>
       <!-- højre side af grid -->
       <section class="grid_right">
+        <div class="grid_right_content">
+        <!-- to do task section -->
         <section id="to_do_list">
-          <h1>To do list</h1>
-          <form>
-            <input type="text" id="text" placeholder="Task name" />
-            <input type="number" id="number" placeholder="Amount" />
+          <h1>To do list:</h1>
+          <form class="pop_up">
+            <label for="text">Add new</label>
+            <input type="text" id="text" placeholder="Task or item..." />
+            <input type="number" id="number" placeholder="Quantity" />
+            <button class="grid_right_btn">Add task</button>
           </form>
-          <button class="grid_right_btn">Add task</button>
+          <section id="task_list_do"></section>
         </section>
+        <!-- done task section -->
         <section id="finished_task_list" class="hide">
-          <h1>Finished tasks</h1>
+          <h1>Finished tasks list:</h1>
+          <section id="task_list_done"></section>
         </section>
-        <section id="task_list"></section>
+        <!-- tamplate af det indhold som skal kopires -->
         <template id="template">
           <article id="">
             <form>
-              <input type="checkbox" value="isChecked" />
+              <input
+                title="Do or un-do task"
+                type="checkbox"
+                value="isChecked"
+              />
             </form>
             <p data-type="name"></p>
             <p data-type="number"></p>
-            <div class="exit">
+            <div title="Delete task" class="exit">
               <span class="line1"></span>
               <span class="line2"></span>
             </div>
           </article>
+          </div>
         </template>
       </section>
     </section>
